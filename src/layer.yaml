@@ -6,6 +6,8 @@ config:
       - use-syslog
       - use-internal-endpoints
       - ssl_ca
+      - ssl_cert
+      - ssl_key
 options:
   basic:
     use_venv: True

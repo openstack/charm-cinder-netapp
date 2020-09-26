@@ -7,7 +7,7 @@ class CindernetappCharm(
         charms_openstack.charm.CinderStoragePluginCharm):
 
     name = 'cinder_netapp'
-    release = 'stein'
+    release = 'ussuri'
     stateless = True
     version_package = 'cinder-common'
     packages = []
@@ -25,11 +25,9 @@ class CindernetappCharm(
             ('netapp_storage_protocol', self.config.get('netapp-storage-protocol')),
             ('netapp_vserver', self.config.get('netapp-vserver')),
             ('netapp_server_hostname', self.config.get('netapp-server-hostname')),
-            ('netapp_server_port', self.config.get('netapp-vserver-port')),
+            ('netapp_server_port', self.config.get('netapp-server-port')),
             ('netapp_login', self.config.get('netapp-login')),
             ('netapp_password', self.config.get('netapp-password')),
-            ('netapp_lun_space_reservation', self.config.get('netapp-lun-space-reservation')),
-            ('netapp_transport_type', self.config.get('netapp-transport-type')),
             ('volume_driver', volumedriver),
             ('volume_backend_name', service)]
 
@@ -45,8 +43,8 @@ class CindernetappCharm(
 
 class CindernetappCharmRocky(CindernetappCharm):
 
-    # Rocky needs py3 packages.
-    release = 'rocky'
+    # Ussuri needs py3 packages.
+    release = 'ussuri'
     version_package = 'cinder-common'
     packages = []
 

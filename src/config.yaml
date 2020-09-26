@@ -1,1 +1,87 @@
 options:
+  volume-backend-name:
+    type: string
+    default: "cinder_netapp"
+    description: Service name to present to Cinder
+  netapp-storage-family:
+    type: string
+    default: "ontap_cluster"
+    description: |
+      The storage family type used on the storage system;
+      valid values are ontap_cluster for using clustered Data ONTAP,
+      or eseries for using E-Series.
+  netapp-storage-protocol:
+    type: string
+    default: "iscsi"
+    description: SAN protocol to use. Choose between iscsi or fc.
+  netapp-vserver:
+    type: string
+    default: !!null ""
+    description: |
+      This option specifies the virtual storage server
+      (Vserver) name on the storage cluster on which provisioning of
+      block storage volumes should occur.
+  netapp-server-hostname:
+    type: string
+    default: !!null ""
+    description: |
+      The hostname (or IP address) for the storage system or
+      proxy server.
+  netapp-server-port:
+    type: int
+    default: !!null ""
+    description: |
+      The TCP port to use for communication with the storage
+      system or proxy server. If not specified, Data ONTAP drivers will
+      use 80 for HTTP and 443 for HTTPS; E-Series will use 8080 for HTTP
+      and 8443 for HTTPS.
+  netapp-login:
+    type: string
+    default: !!null ""
+    description: |
+      Administrative user account name used to access the
+      storage system or proxy server.
+  netapp-password:
+    type: string
+    default: !!null ""
+    description: |
+      Password for the administrative user account specified
+      in the netapp_login option.
+  netapp-nfs-shares-config:
+    type: string
+    default: !!null ""
+    description: |
+      Password for the administrative user account specified
+  netapp_controller_ips:
+    type: string
+    default: !!null ""
+    description: |
+      This option is only utilized when the storage family is
+      configured to eseries. This option is used to restrict provisioning
+      to the specified controllers. Specify the value of this option to be
+      a comma separated list of controller hostnames or IP addresses to be
+      used for provisioning.
+  netapp_array-password:
+    type: string
+    default: !!null ""
+    description: |
+      Password for the NetApp E-Series storage array.
+  netapp_storage_pools:
+    type: string
+    default: !!null ""
+    description: "comma seperated list of pool names ie: pool1,pool2"
+  use-multipath:
+    type: boolean
+    default: True
+    description: |
+      Use multipath for image transfer. The volume_use_multipath
+      option should be set to True in the nova.conf
+  netapp_enable_multiattach:
+    type: boolean
+    default: False
+    description: |
+      This option specifies whether the driver should allow
+      operations that require multiple attachments to a volume.
+      An example would be live migration of servers that have volumes
+      attached. When enabled, this backend is limited to 256 total volumes
+      in order to guarantee volumes can be accessed by more than one host.
