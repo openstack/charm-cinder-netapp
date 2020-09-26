@@ -1,0 +1,465 @@
+action: py38, msg: getenv
+cwd: /home/narinder/develop/charm/charm-cinder-netapp
+cmd: /home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/bin/pip install -r/home/narinder/develop/charm/charm-cinder-netapp/requirements.txt -r/home/narinder/develop/charm/charm-cinder-netapp/test-requirements.txt
+Ignoring dnspython: markers 'python_version < "3.6"' don't match your environment
+Collecting pbr<1.9.0,>=1.8.0
+  Using cached pbr-1.8.1-py2.py3-none-any.whl (89 kB)
+Collecting simplejson>=2.2.0
+  Using cached simplejson-3.17.2-cp38-cp38-manylinux2010_x86_64.whl (137 kB)
+Collecting netifaces>=0.10.4
+  Using cached netifaces-0.10.9.tar.gz (28 kB)
+Collecting netaddr!=0.7.16,>=0.7.12
+  Using cached netaddr-0.8.0-py2.py3-none-any.whl (1.9 MB)
+Collecting Jinja2>=2.6
+  Using cached Jinja2-2.11.2-py2.py3-none-any.whl (125 kB)
+Requirement already satisfied: six>=1.9.0 in ./.tox/py38/lib/python3.8/site-packages (from -r /home/narinder/develop/charm/charm-cinder-netapp/requirements.txt (line 15)) (1.14.0)
+Collecting dnspython
+  Using cached dnspython-2.0.0-py3-none-any.whl (208 kB)
+Collecting psutil<2.0.0,>=1.1.1
+  Using cached psutil-1.2.1.tar.gz (167 kB)
+Processing /home/narinder/.cache/pip/wheels/d1/89/cc/352fd0c99e663a53c7bff7a636cea892f2ac14c39061334310/charm_tools-2.7.8-py3-none-any.whl
+Requirement already satisfied: requests>=2.18.4 in ./.tox/py38/lib/python3.8/site-packages (from -r /home/narinder/develop/charm/charm-cinder-netapp/test-requirements.txt (line 11)) (2.22.0)
+Collecting mock>=1.2
+  Using cached mock-4.0.2-py3-none-any.whl (28 kB)
+Collecting flake8<=2.4.1,>=2.2.4
+  Using cached flake8-2.4.1-py2.py3-none-any.whl (30 kB)
+Collecting stestr>=2.2.0
+  Using cached stestr-3.0.1-py3-none-any.whl (117 kB)
+Collecting coverage>=4.5.2
+  Using cached coverage-5.3-cp38-cp38-manylinux1_x86_64.whl (230 kB)
+Processing /home/narinder/.cache/pip/wheels/8b/d1/11/6a9855487e4bba54c63dfb07a09505787d50a5e27f90b0af33/pyudev-0.22.0-py3-none-any.whl
+Collecting zaza; python_version >= "3.0"
+  Cloning https://github.com/openstack-charmers/zaza.git to /tmp/pip-install-l097_tqx/zaza
+  Running command git clone -q https://github.com/openstack-charmers/zaza.git /tmp/pip-install-l097_tqx/zaza
+Collecting zaza.openstack
+  Cloning https://github.com/openstack-charmers/zaza-openstack-tests.git to /tmp/pip-install-l097_tqx/zaza.openstack
+  Running command git clone -q https://github.com/openstack-charmers/zaza-openstack-tests.git /tmp/pip-install-l097_tqx/zaza.openstack
+Collecting MarkupSafe>=0.23
+  Using cached MarkupSafe-1.1.1-cp38-cp38-manylinux1_x86_64.whl (32 kB)
+Processing /home/narinder/.cache/pip/wheels/50/66/0d/ae5c5e8e265a0787a941da2494927b700a08996072c640a051/blessings-1.6-py3-none-any.whl
+Collecting ruamel.yaml<0.16.0
+  Using cached ruamel.yaml-0.15.100.tar.gz (318 kB)
+Processing /home/narinder/.cache/pip/wheels/6c/36/92/f586681ddcd721005331a22424aa9bada6565d7dd7303db31b/pathspec-0.3.4-py3-none-any.whl
+Collecting cheetah3>=3.0.0
+  Using cached Cheetah3-3.2.5-cp38-cp38-manylinux1_x86_64.whl (677 kB)
+Collecting virtualenv>=1.11.4
+  Using cached virtualenv-20.0.31-py2.py3-none-any.whl (4.9 MB)
+Processing /home/narinder/.cache/pip/wheels/fc/66/b0/4ee41c58b149b1c0e6cc114ac368e5170966f9aaa4857cd75e/dict2colander-0.2-py3-none-any.whl
+Collecting otherstuf<=1.1.0
+  Using cached otherstuf-1.1.0-py2.py3-none-any.whl (7.3 kB)
+Processing /home/narinder/.cache/pip/wheels/d8/d9/22/c89bc78fa6799311511478c08f2d22a152fd76aeb3c80ba6bd/SecretStorage-2.3.1-py3-none-any.whl
+Processing /home/narinder/.cache/pip/wheels/84/54/8d/11bb540d29f8bdf4e00b6c76ef332b794cf9e4e73552306749/launchpadlib-1.10.13-py3-none-any.whl
+Collecting colander<=1.7.0
+  Using cached colander-1.7.0-py2.py3-none-any.whl (113 kB)
+Processing /home/narinder/.cache/pip/wheels/db/f2/07/5e58b12bc11255c3fc0a0aca89849050a8ec203d8b4a3c52c0/PyYAML-3.13-cp38-cp38-linux_x86_64.whl
+Collecting path.py>=10.5
+  Using cached path.py-12.5.0-py3-none-any.whl (2.3 kB)
+Requirement already satisfied: pip>=1.5.4 in ./.tox/py38/lib/python3.8/site-packages (from charm-tools>=2.4.4->-r /home/narinder/develop/charm/charm-cinder-netapp/test-requirements.txt (line 10)) (20.0.2)
+Processing /home/narinder/.cache/pip/wheels/12/d2/88/6e706d3b6874a2948967d0838eb0e0224a8a43b4eb273cf3f3/requirements_parser-0.2.0-py3-none-any.whl
+Processing /home/narinder/.cache/pip/wheels/82/92/3d/735753ddb628c00c4c1c3b35065fbff5d2aaf0eedbec57c8dd/vergit-1.0.2-py3-none-any.whl
+Collecting jsonschema<=2.5.1
+  Using cached jsonschema-2.5.1-py2.py3-none-any.whl (38 kB)
+Processing /home/narinder/.cache/pip/wheels/8f/de/d0/8751186fe6cf46e39c82c8e587ce44ac0842f1f8eaa00a1820/libcharmstore-0.0.9-py3-none-any.whl
+Collecting pep8!=1.6.0,!=1.6.1,!=1.6.2,>=1.5.7
+  Using cached pep8-1.7.1-py2.py3-none-any.whl (41 kB)
+Collecting pyflakes<0.9,>=0.8.1
+  Using cached pyflakes-0.8.1-py2.py3-none-any.whl (35 kB)
+Collecting mccabe<0.4,>=0.2.1
+  Using cached mccabe-0.3.1-py2.py3-none-any.whl (7.6 kB)
+Collecting python-subunit>=1.4.0
+  Using cached python_subunit-1.4.0-py2.py3-none-any.whl (106 kB)
+Collecting testtools>=2.2.0
+  Using cached testtools-2.4.0-py2.py3-none-any.whl (185 kB)
+Collecting voluptuous>=0.8.9
+  Using cached voluptuous-0.12.0-py3-none-any.whl (29 kB)
+Processing /home/narinder/.cache/pip/wheels/8e/70/28/3d6ccd6e315f65f245da085482a2e1c7d14b90b30f239e2cf4/future-0.18.2-py3-none-any.whl
+Collecting cliff>=2.8.0
+  Using cached cliff-3.4.0-py3-none-any.whl (76 kB)
+Collecting fixtures>=3.0.0
+  Using cached fixtures-3.0.0-py2.py3-none-any.whl (67 kB)
+Collecting async_generator
+  Using cached async_generator-1.10-py3-none-any.whl (18 kB)
+Collecting cryptography
+  Using cached cryptography-3.1.1-cp35-abi3-manylinux2010_x86_64.whl (2.6 MB)
+Collecting hvac<0.7.0
+  Using cached hvac-0.6.4-py2.py3-none-any.whl (74 kB)
+Processing /home/narinder/.cache/pip/wheels/7a/7f/41/550c126d68de655f59d11e2242a43267359eb6653c1f091d37/juju-2.8.3-py3-none-any.whl
+Collecting juju-wait
+  Using cached juju_wait-2.8.4-py2.py3-none-any.whl (10 kB)
+Collecting oslo.config<6.12.0
+  Using cached oslo.config-6.11.2-py2.py3-none-any.whl (131 kB)
+Collecting tenacity
+  Using cached tenacity-6.2.0-py2.py3-none-any.whl (24 kB)
+Collecting aodhclient<1.4.0
+  Using cached aodhclient-1.3.0-py2.py3-none-any.whl (47 kB)
+Collecting boto3
+  Using cached boto3-1.15.6-py2.py3-none-any.whl (129 kB)
+Collecting futurist<2.0.0
+  Using cached futurist-1.10.0-py2.py3-none-any.whl (37 kB)
+Collecting gnocchiclient<8.0.0,>=7.0.5
+  Using cached gnocchiclient-7.0.7-py2.py3-none-any.whl (66 kB)
+Collecting lxml
+  Using cached lxml-4.5.2-cp38-cp38-manylinux1_x86_64.whl (5.4 MB)
+Collecting pika<2.0.0,>=1.1.0
+  Using cached pika-1.1.0-py2.py3-none-any.whl (148 kB)
+Collecting python-barbicanclient<5.0.0,>=4.0.1
+  Using cached python_barbicanclient-4.10.0-py3-none-any.whl (82 kB)
+Collecting python-ceilometerclient
+  Using cached python_ceilometerclient-2.9.0-py2.py3-none-any.whl (113 kB)
+Collecting python-cinderclient<6.0.0
+  Using cached python_cinderclient-5.0.1-py2.py3-none-any.whl (274 kB)
+Collecting python-designateclient<3.0.0,>=1.5
+  Using cached python_designateclient-2.12.0-py2.py3-none-any.whl (123 kB)
+Collecting python-glanceclient<3.0.0
+  Using cached python_glanceclient-2.17.1-py2.py3-none-any.whl (195 kB)
+Collecting python-heatclient<2.0.0
+  Using cached python_heatclient-1.18.0-py2.py3-none-any.whl (213 kB)
+Collecting python-keystoneclient<3.22.0
+  Using cached python_keystoneclient-3.21.0-py2.py3-none-any.whl (395 kB)
+Collecting python-manilaclient<2.0.0
+  Using cached python_manilaclient-1.29.0-py2.py3-none-any.whl (296 kB)
+Collecting python-neutronclient<7.0.0
+  Using cached python_neutronclient-6.14.1-py2.py3-none-any.whl (435 kB)
+Collecting python-novaclient<16.0.0
+  Using cached python_novaclient-15.1.1-py2.py3-none-any.whl (333 kB)
+Collecting python-octaviaclient<1.11.0
+  Using cached python_octaviaclient-1.10.1-py3-none-any.whl (89 kB)
+Collecting python-swiftclient<3.9.0
+  Using cached python_swiftclient-3.8.1-py2.py3-none-any.whl (84 kB)
+Requirement already satisfied: appdirs<2,>=1.4.3 in ./.tox/py38/lib/python3.8/site-packages (from virtualenv>=1.11.4->charm-tools>=2.4.4->-r /home/narinder/develop/charm/charm-cinder-netapp/test-requirements.txt (line 10)) (1.4.3)
+Collecting filelock<4,>=3.0.0
+  Using cached filelock-3.0.12-py3-none-any.whl (7.6 kB)
+Collecting distlib<1,>=0.3.1
+  Using cached distlib-0.3.1-py2.py3-none-any.whl (335 kB)
+Collecting stuf>=0.9.16
+  Using cached stuf-0.9.16-py3-none-any.whl (27 kB)
+Collecting httplib2
+  Using cached httplib2-0.18.1-py3-none-any.whl (95 kB)
+Collecting keyring
+  Using cached keyring-21.4.0-py3-none-any.whl (31 kB)
+Processing /home/narinder/.cache/pip/wheels/a3/c9/35/57f9d994f91d9b9d465f0eee237bf7a83d4299daaf1d742964/wadllib-1.3.4-py3-none-any.whl
+Processing /home/narinder/.cache/pip/wheels/18/3e/53/64b8a041aa2e195edd889f91399f2742bda6699ebe9f869a10/lazr.restfulclient-0.14.3-py3-none-any.whl
+Requirement already satisfied: setuptools in ./.tox/py38/lib/python3.8/site-packages (from launchpadlib<1.11->charm-tools>=2.4.4->-r /home/narinder/develop/charm/charm-cinder-netapp/test-requirements.txt (line 10)) (44.0.0)
+Collecting testresources
+  Using cached testresources-2.0.1-py2.py3-none-any.whl (36 kB)
+Processing /home/narinder/.cache/pip/wheels/ac/21/5a/9f4ba95a5e3607038fa0a1963547d84dad9e1d4dd7382b74cd/lazr.uri-1.0.5-py3-none-any.whl
+Collecting translationstring
+  Using cached translationstring-1.4-py2.py3-none-any.whl (15 kB)
+Collecting iso8601
+  Using cached iso8601-0.1.13-py2.py3-none-any.whl (9.3 kB)
+Collecting path
+  Using cached path-15.0.0-py3-none-any.whl (21 kB)
+Processing /home/narinder/.cache/pip/wheels/38/ee/dd/9c9677beaecf3e4895fc20ab62a72f6c5982270b2d8f4c5594/theblues-0.5.2-py3-none-any.whl
+Collecting extras
+  Using cached extras-1.0.0-py2.py3-none-any.whl (7.3 kB)
+Collecting unittest2>=1.0.0
+  Using cached unittest2-1.1.0-py2.py3-none-any.whl (96 kB)
+Collecting traceback2
+  Using cached traceback2-1.4.0-py2.py3-none-any.whl (16 kB)
+Collecting python-mimeparse
+  Using cached python_mimeparse-1.6.0-py2.py3-none-any.whl (6.1 kB)
+Collecting stevedore>=2.0.1
+  Using cached stevedore-3.2.2-py3-none-any.whl (42 kB)
+Processing /home/narinder/.cache/pip/wheels/46/60/6c/bb25d05df22906786206e901e9354bb3061061191116768bee/prettytable-0.7.2-py3-none-any.whl
+Requirement already satisfied: pyparsing>=2.1.0 in ./.tox/py38/lib/python3.8/site-packages (from cliff>=2.8.0->stestr>=2.2.0->-r /home/narinder/develop/charm/charm-cinder-netapp/test-requirements.txt (line 14)) (2.4.6)
+Collecting cmd2!=0.8.3,>=0.8.0
+  Using cached cmd2-1.3.10-py3-none-any.whl (132 kB)
+Collecting cffi!=1.11.3,>=1.8
+  Using cached cffi-1.14.3-cp38-cp38-manylinux1_x86_64.whl (410 kB)
+Collecting pyasn1>=0.4.4
+  Using cached pyasn1-0.4.8-py2.py3-none-any.whl (77 kB)
+Collecting pyRFC3339<2.0,>=1.0
+  Using cached pyRFC3339-1.1-py2.py3-none-any.whl (5.7 kB)
+Collecting toposort<2,>=1.5
+  Using cached toposort-1.5-py2.py3-none-any.whl (7.6 kB)
+Processing /home/narinder/.cache/pip/wheels/84/d0/a9/d76cd7f6be948b522250677d4d85e056ee989b90b283ad5fca/macaroonbakery-1.3.1-py2.py3-none-any.whl
+Processing /home/narinder/.cache/pip/wheels/ff/66/8a/b0610f3b070460e56f775bfcaafc6123838f3e7ab3cd80aaaf/websockets-7.0-cp38-cp38-linux_x86_64.whl
+Collecting paramiko<3.0.0,>=2.4.0
+  Using cached paramiko-2.7.2-py2.py3-none-any.whl (206 kB)
+Collecting typing-inspect>=0.6.0
+  Using cached typing_inspect-0.6.0-py3-none-any.whl (8.1 kB)
+Collecting oslo.i18n>=3.15.3
+  Using cached oslo.i18n-5.0.1-py3-none-any.whl (42 kB)
+Collecting debtcollector>=1.2.0
+  Using cached debtcollector-2.2.0-py3-none-any.whl (20 kB)
+Collecting rfc3986>=1.2.0
+  Using cached rfc3986-1.4.0-py2.py3-none-any.whl (31 kB)
+Collecting osprofiler>=1.4.0
+  Using cached osprofiler-3.4.0-py3-none-any.whl (85 kB)
+Collecting keystoneauth1>=1.0.0
+  Using cached keystoneauth1-4.2.1-py3-none-any.whl (308 kB)
+Collecting oslo.serialization>=1.4.0
+  Using cached oslo.serialization-4.0.1-py3-none-any.whl (21 kB)
+Collecting osc-lib>=1.0.1
+  Using cached osc_lib-2.2.1-py3-none-any.whl (83 kB)
+Collecting oslo.utils>=2.0.0
+  Using cached oslo.utils-4.6.0-py3-none-any.whl (96 kB)
+Collecting jmespath<1.0.0,>=0.7.1
+  Using cached jmespath-0.10.0-py2.py3-none-any.whl (24 kB)
+Collecting s3transfer<0.4.0,>=0.3.0
+  Using cached s3transfer-0.3.3-py2.py3-none-any.whl (69 kB)
+Collecting botocore<1.19.0,>=1.18.6
+  Using cached botocore-1.18.6-py2.py3-none-any.whl (6.6 MB)
+Collecting monotonic
+  Using cached monotonic-1.5-py2.py3-none-any.whl (5.3 kB)
+Collecting ujson
+  Using cached ujson-3.2.0-cp38-cp38-manylinux1_x86_64.whl (181 kB)
+Collecting python-dateutil
+  Using cached python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+Collecting Babel!=2.4.0,>=2.3.4
+  Using cached Babel-2.8.0-py2.py3-none-any.whl (8.6 MB)
+Collecting pyOpenSSL>=17.1.0
+  Using cached pyOpenSSL-19.1.0-py2.py3-none-any.whl (53 kB)
+Processing /home/narinder/.cache/pip/wheels/5f/fd/9e/b6cf5890494cb8ef0b5eaff72e5d55a70fb56316007d6dfe73/wrapt-1.12.1-py3-none-any.whl
+Processing /home/narinder/.cache/pip/wheels/07/5b/7f/aa3d5f762792f7e8f1d1fa6f03585da96b78f2cb9fe23f514a/warlock-1.3.3-py2.py3-none-any.whl
+Collecting oslo.log>=3.36.0
+  Using cached oslo.log-4.4.0-py3-none-any.whl (66 kB)
+Collecting os-client-config>=1.28.0
+  Using cached os_client_config-2.1.0-py3-none-any.whl (31 kB)
+Collecting python-openstackclient>=3.12.0
+  Using cached python_openstackclient-5.3.1-py3-none-any.whl (884 kB)
+Processing /home/narinder/.cache/pip/wheels/5c/94/79/32557465cdb2d7d6d72ba2499632d89ba84fce50a91ae98f14/parse-1.18.0-py3-none-any.whl
+Collecting jeepney>=0.4.2; sys_platform == "linux"
+  Using cached jeepney-0.4.3-py3-none-any.whl (21 kB)
+Requirement already satisfied: distro in ./.tox/py38/lib/python3.8/site-packages (from lazr.restfulclient>=0.9.19->launchpadlib<1.11->charm-tools>=2.4.4->-r /home/narinder/develop/charm/charm-cinder-netapp/test-requirements.txt (line 10)) (1.4.0)
+Collecting oauthlib
+  Using cached oauthlib-3.1.0-py2.py3-none-any.whl (147 kB)
+Processing /home/narinder/.cache/pip/wheels/4b/ec/d1/0e2dc0015da20fe89613a991a35f59b8fd5781f1164a371499/jujubundlelib-0.5.6-py2.py3-none-any.whl
+Collecting argparse
+  Using cached argparse-1.4.0-py2.py3-none-any.whl (23 kB)
+Collecting linecache2
+  Using cached linecache2-1.0.0-py2.py3-none-any.whl (12 kB)
+Collecting attrs>=16.3.0
+  Using cached attrs-20.2.0-py2.py3-none-any.whl (48 kB)
+Processing /home/narinder/.cache/pip/wheels/03/79/58/ab51f0f590281b0f4f6046d9271eb98cc50565afb9200f155a/pyperclip-1.8.0-py3-none-any.whl
+Collecting wcwidth>=0.1.7
+  Using cached wcwidth-0.2.5-py2.py3-none-any.whl (30 kB)
+Requirement already satisfied: colorama>=0.3.7 in ./.tox/py38/lib/python3.8/site-packages (from cmd2!=0.8.3,>=0.8.0->cliff>=2.8.0->stestr>=2.2.0->-r /home/narinder/develop/charm/charm-cinder-netapp/test-requirements.txt (line 14)) (0.4.3)
+Collecting pycparser
+  Using cached pycparser-2.20-py2.py3-none-any.whl (112 kB)
+Collecting pytz
+  Using cached pytz-2020.1-py2.py3-none-any.whl (510 kB)
+Collecting protobuf<4.0,>=3.0.0
+  Using cached protobuf-3.13.0-cp38-cp38-manylinux1_x86_64.whl (1.3 MB)
+Collecting pymacaroons<1.0,>=0.12.0
+  Using cached pymacaroons-0.13.0-py2.py3-none-any.whl (19 kB)
+Collecting PyNaCl<2.0,>=1.1.2
+  Using cached PyNaCl-1.4.0-cp35-abi3-manylinux1_x86_64.whl (961 kB)
+Collecting bcrypt>=3.1.3
+  Using cached bcrypt-3.2.0-cp36-abi3-manylinux2010_x86_64.whl (63 kB)
+Collecting mypy-extensions>=0.3.0
+  Using cached mypy_extensions-0.4.3-py2.py3-none-any.whl (4.5 kB)
+Collecting typing-extensions>=3.7.4
+  Using cached typing_extensions-3.7.4.3-py3-none-any.whl (22 kB)
+Collecting oslo.concurrency>=3.26.0
+  Using cached oslo.concurrency-4.3.0-py3-none-any.whl (42 kB)
+Collecting WebOb>=1.7.1
+  Using cached WebOb-1.8.6-py2.py3-none-any.whl (114 kB)
+Collecting os-service-types>=1.2.0
+  Using cached os_service_types-1.7.0-py2.py3-none-any.whl (24 kB)
+Requirement already satisfied: msgpack>=0.5.2 in ./.tox/py38/lib/python3.8/site-packages (from oslo.serialization>=1.4.0->aodhclient<1.4.0->zaza.openstack->-r /home/narinder/develop/charm/charm-cinder-netapp/test-requirements.txt (line 18)) (0.6.2)
+Collecting openstacksdk>=0.15.0
+  Using cached openstacksdk-0.50.0-py3-none-any.whl (1.3 MB)
+Collecting packaging>=20.4
+  Using cached packaging-20.4-py2.py3-none-any.whl (37 kB)
+Requirement already satisfied: urllib3<1.26,>=1.20; python_version != "3.4" in ./.tox/py38/lib/python3.8/site-packages (from botocore<1.19.0,>=1.18.6->boto3->zaza.openstack->-r /home/narinder/develop/charm/charm-cinder-netapp/test-requirements.txt (line 18)) (1.25.8)
+Collecting jsonpatch<2,>=0.10
+  Using cached jsonpatch-1.26-py2.py3-none-any.whl (11 kB)
+Processing /home/narinder/.cache/pip/wheels/9d/a0/4b/1a80814e4ad0b035c07831ea1b06b691046198492bbc5769b6/pyinotify-0.9.6-py3-none-any.whl
+Collecting oslo.context>=2.20.0
+  Using cached oslo.context-3.1.1-py3-none-any.whl (16 kB)
+Collecting fasteners>=0.7.0
+  Using cached fasteners-0.15-py2.py3-none-any.whl (23 kB)
+Collecting decorator>=4.4.1
+  Using cached decorator-4.4.2-py2.py3-none-any.whl (9.2 kB)
+Collecting munch>=2.1.0
+  Using cached munch-2.5.0-py2.py3-none-any.whl (10 kB)
+Collecting requestsexceptions>=1.2.0
+  Using cached requestsexceptions-1.4.0-py2.py3-none-any.whl (3.8 kB)
+Processing /home/narinder/.cache/pip/wheels/62/4b/6b/5e53d6c565d1a8e271db9519f6e455a6dc6e9b4fc08cbdc1e8/dogpile.cache-1.0.2-py3-none-any.whl
+Collecting jsonpointer>=1.9
+  Using cached jsonpointer-2.0-py2.py3-none-any.whl (7.6 kB)
+Building wheels for collected packages: netifaces, psutil, zaza, zaza.openstack, ruamel.yaml
+  Building wheel for netifaces (setup.py): started
+  Building wheel for netifaces (setup.py): finished with status 'error'
+  ERROR: Command errored out with exit status 1:
+   command: /home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/bin/python -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-l097_tqx/netifaces/setup.py'"'"'; __file__='"'"'/tmp/pip-install-l097_tqx/netifaces/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-omf6jlzk
+       cwd: /tmp/pip-install-l097_tqx/netifaces/
+  Complete output (20 lines):
+  running bdist_wheel
+  running build
+  running build_ext
+  checking for getifaddrs...found.
+  checking for getnameinfo...found.
+  checking for IPv6 socket IOCTLs...not found.
+  checking for optional header files...netash/ash.h netatalk/at.h netax25/ax25.h neteconet/ec.h netipx/ipx.h netpacket/packet.h netrose/rose.h linux/atm.h linux/llc.h linux/tipc.h linux/dn.h.
+  checking whether struct sockaddr has a length field...no.
+  checking which sockaddr_xxx structs are defined...at ax25 in in6 ipx un rose ash ec ll atmpvc atmsvc dn llc.
+  checking for routing socket support...no.
+  checking for sysctl(CTL_NET...) support...no.
+  checking for netlink support...yes.
+  will use netlink to read routing table
+  building 'netifaces' extension
+  x86_64-linux-gnu-gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DNETIFACES_VERSION=0.10.9 -DHAVE_GETIFADDRS=1 -DHAVE_GETNAMEINFO=1 -DHAVE_NETASH_ASH_H=1 -DHAVE_NETATALK_AT_H=1 -DHAVE_NETAX25_AX25_H=1 -DHAVE_NETECONET_EC_H=1 -DHAVE_NETIPX_IPX_H=1 -DHAVE_NETPACKET_PACKET_H=1 -DHAVE_NETROSE_ROSE_H=1 -DHAVE_LINUX_ATM_H=1 -DHAVE_LINUX_LLC_H=1 -DHAVE_LINUX_TIPC_H=1 -DHAVE_LINUX_DN_H=1 -DHAVE_SOCKADDR_AT=1 -DHAVE_SOCKADDR_AX25=1 -DHAVE_SOCKADDR_IN=1 -DHAVE_SOCKADDR_IN6=1 -DHAVE_SOCKADDR_IPX=1 -DHAVE_SOCKADDR_UN=1 -DHAVE_SOCKADDR_ROSE=1 -DHAVE_SOCKADDR_ASH=1 -DHAVE_SOCKADDR_EC=1 -DHAVE_SOCKADDR_LL=1 -DHAVE_SOCKADDR_ATMPVC=1 -DHAVE_SOCKADDR_ATMSVC=1 -DHAVE_SOCKADDR_DN=1 -DHAVE_SOCKADDR_LLC=1 -DHAVE_PF_NETLINK=1 -I/home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/include -I/usr/include/python3.8 -c netifaces.c -o build/temp.linux-x86_64-3.8/netifaces.o
+  netifaces.c:1:10: fatal error: Python.h: No such file or directory
+      1 | #include <Python.h>
+        |          ^~~~~~~~~~
+  compilation terminated.
+  error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+  ----------------------------------------
+  ERROR: Failed building wheel for netifaces
+  Running setup.py clean for netifaces
+  Building wheel for psutil (setup.py): started
+  Building wheel for psutil (setup.py): finished with status 'error'
+  ERROR: Command errored out with exit status 1:
+   command: /home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/bin/python -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-l097_tqx/psutil/setup.py'"'"'; __file__='"'"'/tmp/pip-install-l097_tqx/psutil/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-xgexpvou
+       cwd: /tmp/pip-install-l097_tqx/psutil/
+  Complete output (27 lines):
+  running bdist_wheel
+  running build
+  running build_py
+  creating build
+  creating build/lib.linux-x86_64-3.8
+  creating build/lib.linux-x86_64-3.8/psutil
+  copying psutil/_error.py -> build/lib.linux-x86_64-3.8/psutil
+  copying psutil/_common.py -> build/lib.linux-x86_64-3.8/psutil
+  copying psutil/_pssunos.py -> build/lib.linux-x86_64-3.8/psutil
+  copying psutil/_psbsd.py -> build/lib.linux-x86_64-3.8/psutil
+  copying psutil/_psposix.py -> build/lib.linux-x86_64-3.8/psutil
+  copying psutil/_psmswindows.py -> build/lib.linux-x86_64-3.8/psutil
+  copying psutil/_compat.py -> build/lib.linux-x86_64-3.8/psutil
+  copying psutil/_pslinux.py -> build/lib.linux-x86_64-3.8/psutil
+  copying psutil/__init__.py -> build/lib.linux-x86_64-3.8/psutil
+  copying psutil/_psosx.py -> build/lib.linux-x86_64-3.8/psutil
+  copying psutil/error.py -> build/lib.linux-x86_64-3.8/psutil
+  running build_ext
+  building '_psutil_linux' extension
+  creating build/temp.linux-x86_64-3.8
+  creating build/temp.linux-x86_64-3.8/psutil
+  x86_64-linux-gnu-gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -I/home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/include -I/usr/include/python3.8 -c psutil/_psutil_linux.c -o build/temp.linux-x86_64-3.8/psutil/_psutil_linux.o
+  psutil/_psutil_linux.c:13:10: fatal error: Python.h: No such file or directory
+     13 | #include <Python.h>
+        |          ^~~~~~~~~~
+  compilation terminated.
+  error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+  ----------------------------------------
+  ERROR: Failed building wheel for psutil
+  Running setup.py clean for psutil
+  Building wheel for zaza (setup.py): started
+  Building wheel for zaza (setup.py): finished with status 'done'
+  Created wheel for zaza: filename=zaza-0.0.2.dev1-py3-none-any.whl size=84900 sha256=982a2735587ff1b09f0dc7e6faa46bf577cce3c11158e935d66924726311ac12
+  Stored in directory: /tmp/pip-ephem-wheel-cache-1bbxvbp8/wheels/94/5e/6d/54ed4a84a0586298ac1ea5905feb0077c8937cd67e2389ccae
+  Building wheel for zaza.openstack (setup.py): started
+  Building wheel for zaza.openstack (setup.py): finished with status 'done'
+  Created wheel for zaza.openstack: filename=zaza.openstack-0.0.1.dev1-py3-none-any.whl size=352363 sha256=9dcf40d6abc2d79a14427d56891e72a4b0cb4459611107dbc4443919ba802eac
+  Stored in directory: /tmp/pip-ephem-wheel-cache-1bbxvbp8/wheels/ea/17/bc/c9ee79eb094a2f2635f02c71307826891040030c0efc593ad0
+  Building wheel for ruamel.yaml (setup.py): started
+  Building wheel for ruamel.yaml (setup.py): finished with status 'error'
+  ERROR: Command errored out with exit status 1:
+   command: /home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/bin/python -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-l097_tqx/ruamel.yaml/setup.py'"'"'; __file__='"'"'/tmp/pip-install-l097_tqx/ruamel.yaml/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-lkau3wo4
+       cwd: /tmp/pip-install-l097_tqx/ruamel.yaml/
+  Complete output (50 lines):
+  sys.argv ['/tmp/pip-install-l097_tqx/ruamel.yaml/setup.py', 'bdist_wheel', '-d', '/tmp/pip-wheel-lkau3wo4']
+  test compiling test_ruamel_yaml
+  running bdist_wheel
+  running build
+  running build_py
+  creating build
+  creating build/lib.linux-x86_64-3.8
+  creating build/lib.linux-x86_64-3.8/ruamel
+  copying .ruamel/__init__.py -> build/lib.linux-x86_64-3.8/ruamel
+  creating build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./util.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./parser.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./tokens.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./anchor.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./scanner.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./cyaml.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./compat.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./main.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./emitter.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./nodes.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./scalarint.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./composer.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./timestamp.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./representer.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./scalarbool.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./scalarstring.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./dumper.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./comments.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./events.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./__init__.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./reader.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./configobjwalker.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./serializer.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./constructor.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./error.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./scalarfloat.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./loader.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./resolver.py -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./LICENSE -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  copying ./py.typed -> build/lib.linux-x86_64-3.8/ruamel/yaml
+  running build_ext
+  building '_ruamel_yaml' extension
+  creating build/temp.linux-x86_64-3.8
+  creating build/temp.linux-x86_64-3.8/ext
+  x86_64-linux-gnu-gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -I/home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/include -I/usr/include/python3.8 -c ext/_ruamel_yaml.c -o build/temp.linux-x86_64-3.8/ext/_ruamel_yaml.o
+  ext/_ruamel_yaml.c:4:10: fatal error: Python.h: No such file or directory
+      4 | #include "Python.h"
+        |          ^~~~~~~~~~
+  compilation terminated.
+  error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+  ----------------------------------------
+  ERROR: Failed building wheel for ruamel.yaml
+  Running setup.py clean for ruamel.yaml
+Successfully built zaza zaza.openstack
+Failed to build netifaces psutil ruamel.yaml
+ERROR: Error checking for conflicts.
+Traceback (most recent call last):
+  File "/home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/lib/python3.8/site-packages/pkg_resources/__init__.py", line 2681, in version
+    return self._version
+  File "/home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/lib/python3.8/site-packages/pkg_resources/__init__.py", line 2815, in __getattr__
+    raise AttributeError(attr)
+AttributeError: _version
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/lib/python3.8/site-packages/pip/_internal/commands/install.py", line 543, in _warn_about_conflicts
+    package_set, _dep_info = check_install_conflicts(to_install)
+  File "/home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/lib/python3.8/site-packages/pip/_internal/operations/check.py", line 116, in check_install_conflicts
+    would_be_installed = _simulate_installation_of(to_install, package_set)
+  File "/home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/lib/python3.8/site-packages/pip/_internal/operations/check.py", line 143, in _simulate_installation_of
+    package_set[name] = PackageDetails(dist.version, dist.requires())
+  File "/home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/lib/python3.8/site-packages/pkg_resources/__init__.py", line 2689, in version
+    raise ValueError(msg, self)
+ValueError: ("Missing 'Version:' header and/or PKG-INFO file at path: /tmp/pip-install-l097_tqx/psutil/pip-egg-info/psutil.egg-info/PKG-INFO", psutil [unknown version] (/tmp/pip-install-l097_tqx/psutil/pip-egg-info))
+Installing collected packages: pbr, simplejson, netifaces, netaddr, MarkupSafe, Jinja2, dnspython, psutil, blessings, ruamel.yaml, pathspec, cheetah3, filelock, distlib, virtualenv, dict2colander, parse, stuf, otherstuf, pycparser, cffi, cryptography, secretstorage, httplib2, jeepney, keyring, lazr.uri, wadllib, oauthlib, lazr.restfulclient, testresources, launchpadlib, translationstring, iso8601, colander, pyyaml, path, path.py, requirements-parser, vergit, jsonschema, jujubundlelib, pytz, pyRFC3339, protobuf, PyNaCl, pymacaroons, macaroonbakery, theblues, libcharmstore, charm-tools, mock, pep8, pyflakes, mccabe, flake8, extras, fixtures, argparse, linecache2, traceback2, unittest2, python-mimeparse, testtools, python-subunit, voluptuous, future, stevedore, PrettyTable, attrs, pyperclip, wcwidth, cmd2, cliff, stestr, coverage, pyudev, async-generator, hvac, pyasn1, toposort, websockets, bcrypt, paramiko, mypy-extensions, typing-extensions, typing-inspect, juju, juju-wait, oslo.i18n, wrapt, debtcollector, rfc3986, oslo.config, tenacity, zaza, packaging, oslo.utils, monotonic, fasteners, oslo.concurrency, oslo.serialization, WebOb, osprofiler, os-service-types, keystoneauth1, decorator, jmespath, jsonpointer, jsonpatch, munch, requestsexceptions, dogpile.cache, openstacksdk, osc-lib, aodhclient, python-dateutil, botocore, s3transfer, boto3, futurist, ujson, gnocchiclient, lxml, pika, python-barbicanclient, python-ceilometerclient, Babel, python-cinderclient, python-designateclient, pyOpenSSL, warlock, python-glanceclient, python-swiftclient, python-heatclient, python-keystoneclient, pyinotify, oslo.context, oslo.log, python-manilaclient, os-client-config, python-neutronclient, python-novaclient, python-openstackclient, python-octaviaclient, zaza.openstack
+    Running setup.py install for netifaces: started
+    Running setup.py install for netifaces: finished with status 'error'
+    ERROR: Command errored out with exit status 1:
+     command: /home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/bin/python -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-l097_tqx/netifaces/setup.py'"'"'; __file__='"'"'/tmp/pip-install-l097_tqx/netifaces/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /tmp/pip-record-o4uftkxr/install-record.txt --single-version-externally-managed --compile --install-headers /home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/include/site/python3.8/netifaces
+         cwd: /tmp/pip-install-l097_tqx/netifaces/
+    Complete output (20 lines):
+    running install
+    running build
+    running build_ext
+    checking for getifaddrs...found.
+    checking for getnameinfo...found.
+    checking for IPv6 socket IOCTLs...not found.
+    checking for optional header files...netash/ash.h netatalk/at.h netax25/ax25.h neteconet/ec.h netipx/ipx.h netpacket/packet.h netrose/rose.h linux/atm.h linux/llc.h linux/tipc.h linux/dn.h.
+    checking whether struct sockaddr has a length field...no.
+    checking which sockaddr_xxx structs are defined...at ax25 in in6 ipx un rose ash ec ll atmpvc atmsvc dn llc.
+    checking for routing socket support...no.
+    checking for sysctl(CTL_NET...) support...no.
+    checking for netlink support...yes.
+    will use netlink to read routing table
+    building 'netifaces' extension
+    x86_64-linux-gnu-gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DNETIFACES_VERSION=0.10.9 -DHAVE_GETIFADDRS=1 -DHAVE_GETNAMEINFO=1 -DHAVE_NETASH_ASH_H=1 -DHAVE_NETATALK_AT_H=1 -DHAVE_NETAX25_AX25_H=1 -DHAVE_NETECONET_EC_H=1 -DHAVE_NETIPX_IPX_H=1 -DHAVE_NETPACKET_PACKET_H=1 -DHAVE_NETROSE_ROSE_H=1 -DHAVE_LINUX_ATM_H=1 -DHAVE_LINUX_LLC_H=1 -DHAVE_LINUX_TIPC_H=1 -DHAVE_LINUX_DN_H=1 -DHAVE_SOCKADDR_AT=1 -DHAVE_SOCKADDR_AX25=1 -DHAVE_SOCKADDR_IN=1 -DHAVE_SOCKADDR_IN6=1 -DHAVE_SOCKADDR_IPX=1 -DHAVE_SOCKADDR_UN=1 -DHAVE_SOCKADDR_ROSE=1 -DHAVE_SOCKADDR_ASH=1 -DHAVE_SOCKADDR_EC=1 -DHAVE_SOCKADDR_LL=1 -DHAVE_SOCKADDR_ATMPVC=1 -DHAVE_SOCKADDR_ATMSVC=1 -DHAVE_SOCKADDR_DN=1 -DHAVE_SOCKADDR_LLC=1 -DHAVE_PF_NETLINK=1 -I/home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/include -I/usr/include/python3.8 -c netifaces.c -o build/temp.linux-x86_64-3.8/netifaces.o
+    netifaces.c:1:10: fatal error: Python.h: No such file or directory
+        1 | #include <Python.h>
+          |          ^~~~~~~~~~
+    compilation terminated.
+    error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+    ----------------------------------------
+ERROR: Command errored out with exit status 1: /home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/bin/python -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-l097_tqx/netifaces/setup.py'"'"'; __file__='"'"'/tmp/pip-install-l097_tqx/netifaces/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /tmp/pip-record-o4uftkxr/install-record.txt --single-version-externally-managed --compile --install-headers /home/narinder/develop/charm/charm-cinder-netapp/.tox/py38/include/site/python3.8/netifaces Check the logs for full command output.

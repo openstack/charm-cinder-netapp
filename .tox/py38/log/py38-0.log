@@ -1,0 +1,7 @@
+action: py38, msg: getenv
+cwd: /home/narinder/develop/charm/charm-cinder-netapp/.tox
+cmd: /usr/bin/python3 -m virtualenv --no-download --python /usr/bin/python3 py38
+created virtual environment CPython3.8.2.final.0-64 in 335ms
+  creator CPython3Posix(dest=/home/narinder/develop/charm/charm-cinder-netapp/.tox/py38, clear=False, global=False)
+  seeder FromAppData(download=False, distlib=latest, webencodings=latest, pep517=latest, certifi=latest, ipaddr=latest, pip=latest, requests=latest, msgpack=latest, pytoml=latest, chardet=latest, wheel=latest, packaging=latest, pyparsing=latest, CacheControl=latest, six=latest, urllib3=latest, idna=latest, colorama=latest, setuptools=latest, pkg_resources=latest, html5lib=latest, progress=latest, distro=latest, appdirs=latest, contextlib2=latest, lockfile=latest, retrying=latest, via=copy, app_data_dir=/home/narinder/.local/share/virtualenv/seed-app-data/v1.0.1.debian)
+  activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
