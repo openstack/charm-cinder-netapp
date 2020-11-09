@@ -38,6 +38,10 @@ class CindernetappCharm(
                 ('netapp_storage_pools', self.config.get('netapp-storage-pools')),
                 ('use_multipath_for_image_xfer', self.config.get('use-multipath'))]
 
+        if self.config.get('netapp-storage-protocol') == "nfs":
+            driver_options_extension = [
+                ('nfs_shares_config', self.config.get('nfs-shares-config'))]
+
         return driver_options_common + driver_options_extension
 
 

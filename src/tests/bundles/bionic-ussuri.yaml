@@ -1,4 +1,4 @@
-series: xenial
+series: bionic
 comment:
 - 'machines section to decide order of deployment. database sooner = faster'
 machines:
@@ -28,18 +28,18 @@ applications:
     charm: cs:~openstack-charmers-next/keystone
     num_units: 1
     options:
-      openstack-origin: cloud:xenial-stein
+      openstack-origin: cloud:bionic-ussuri
     to:
     - '1'
   cinder:
     charm: cs:~openstack-charmers-next/cinder
     num_units: 1
     options:
-      openstack-origin: cloud:xenial-stein
+      openstack-origin: cloud:bionic-ussuri
     to:
     - '2'
   cinder-netapp:
-    series: xenial
+    series: bionic
     charm: cinder-netapp
     options:
 # Add config options here

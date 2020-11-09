@@ -13,7 +13,7 @@ options:
   netapp-storage-protocol:
     type: string
     default: "iscsi"
-    description: SAN protocol to use. Choose between iscsi or fc.
+    description: SAN protocol to use. Choose between iscsi or NFS.
   netapp-vserver:
     type: string
     default: !!null ""
@@ -51,7 +51,9 @@ options:
     type: string
     default: !!null ""
     description: |
-      Password for the administrative user account specified
+        The file referenced by this configuration option should contain a
+        list of NFS shares, each on their own line, to which the driver
+        should attempt to provision new Cinder volumes into.
   netapp_controller_ips:
     type: string
     default: !!null ""

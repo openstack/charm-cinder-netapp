@@ -11,8 +11,8 @@ tags:
   - file-servers
   - misc
 series:
-  - xenial
   - bionic
+  - focal
 subordinate: true
 provides:
   storage-backend:
