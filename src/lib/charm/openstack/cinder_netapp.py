@@ -3,17 +3,18 @@ import charms_openstack.charm
 charms_openstack.charm.use_defaults('charm.default-select-release')
 
 
-class CindernetappCharm(
+class CinderNetAppCharm(
         charms_openstack.charm.CinderStoragePluginCharm):
 
     name = 'cinder_netapp'
-    release = 'ussuri'
-    stateless = True
     version_package = 'cinder-common'
+    release = 'ocata'
     packages = []
+    release_pkg = 'cinder-common'
+    stateless = True
     # Specify any config that the user *must* set.
     mandatory_config = [
-        'netapp_storage_family', 'netapp_storage_protocol', 'netapp_server_hostname',
+        'netapp-storage-family', 'netapp-storage-protocol', 'netapp-server-hostname',
         'volume-backend-name']
 
     def cinder_configuration(self):
@@ -40,15 +41,15 @@ class CindernetappCharm(
 
         if self.config.get('netapp-storage-protocol') == "nfs":
             driver_options_extension = [
-                ('nfs_shares_config', self.config.get('nfs-shares-config'))]
+                ('nfs_shares_config', self.config.get('netapp-nfs-shares-config'))]
 
         return driver_options_common + driver_options_extension
 
 
-class CindernetappCharmRocky(CindernetappCharm):
+class CinderNetAppCharmRocky(CinderNetAppCharm):
 
     # Ussuri needs py3 packages.
-    release = 'ussuri'
+    release = 'rocky'
     version_package = 'cinder-common'
     packages = []
 

@@ -54,7 +54,7 @@ options:
         The file referenced by this configuration option should contain a
         list of NFS shares, each on their own line, to which the driver
         should attempt to provision new Cinder volumes into.
-  netapp_controller_ips:
+  netapp-controller-ips:
     type: string
     default: !!null ""
     description: |
@@ -63,12 +63,12 @@ options:
       to the specified controllers. Specify the value of this option to be
       a comma separated list of controller hostnames or IP addresses to be
       used for provisioning.
-  netapp_array-password:
+  netapp-array-password:
     type: string
     default: !!null ""
     description: |
       Password for the NetApp E-Series storage array.
-  netapp_storage_pools:
+  netapp-storage-pools:
     type: string
     default: !!null ""
     description: "comma seperated list of pool names ie: pool1,pool2"
@@ -78,7 +78,7 @@ options:
     description: |
       Use multipath for image transfer. The volume_use_multipath
       option should be set to True in the nova.conf
-  netapp_enable_multiattach:
+  netapp-enable-multiattach:
     type: boolean
     default: False
     description: |
