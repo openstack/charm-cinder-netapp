@@ -21,16 +21,22 @@ class CinderNetAppCharm(
         service = self.config.get('volume-backend-name')
         volumedriver = 'cinder.volume.drivers.netapp.common.NetAppDriver'
         driver_options_extension = []
+        driver_transport = []
         driver_options_common = [
             ('netapp_storage_family', self.config.get('netapp-storage-family')),
             ('netapp_storage_protocol', self.config.get('netapp-storage-protocol')),
             ('netapp_vserver', self.config.get('netapp-vserver')),
             ('netapp_server_hostname', self.config.get('netapp-server-hostname')),
             ('netapp_server_port', self.config.get('netapp-server-port')),
+            ('use_multipath_for_image_xfer', self.config.get('use-multipath')),
             ('netapp_login', self.config.get('netapp-login')),
             ('netapp_password', self.config.get('netapp-password')),
             ('volume_driver', volumedriver),
             ('volume_backend_name', service)]
+
+        if self.config.get('netapp-server-port') == 443:
+            driver_transport = [
+                ('netapp_transport_type', "https")]
 
         if self.config.get('netapp-storage-family') == "eseries":
             driver_options_extension = [
@@ -43,8 +49,7 @@ class CinderNetAppCharm(
             driver_options_extension = [
                 ('nfs_shares_config', self.config.get('netapp-nfs-shares-config'))]
 
-        return driver_options_common + driver_options_extension
-
+        return driver_options_common + driver_transport + driver_options_extension
 
 class CinderNetAppCharmRocky(CinderNetAppCharm):
 

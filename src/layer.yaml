@@ -1,13 +1,16 @@
-includes: ['layer:openstack', 'interface:cinder-backend']
+includes:
+- "layer:openstack"
+- "interface:cinder-backend"
+- "interface:tls-certificates"
 config:
   deletes:
-      - debug
-      - verbose
-      - use-syslog
-      - use-internal-endpoints
-      - ssl_ca
-      - ssl_cert
-      - ssl_key
+  - debug
+  - verbose
+  - use-syslog
+  - use-internal-endpoints
+  - ssl_ca
+  - ssl_cert
+  - ssl_key
 options:
   basic:
     use_venv: True
