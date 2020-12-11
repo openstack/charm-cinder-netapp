@@ -1,17 +1,24 @@
-includes:
+"includes":
+- "layer:options"
+- "layer:basic"
+- "interface:tls-certificates"
 - "layer:openstack"
 - "interface:cinder-backend"
-- "interface:tls-certificates"
-config:
-  deletes:
-  - debug
-  - verbose
-  - use-syslog
-  - use-internal-endpoints
-  - ssl_ca
-  - ssl_cert
-  - ssl_key
-options:
-  basic:
-    use_venv: True
-repo: https://github.com/openstack-charmers/cinder-storage-backend-template
+"exclude": [".travis.yml", "tests", "tox.ini", "test-requirements.txt", "unit_tests",
+  ".gitignore", ".gitreview", ".zuul.yaml", "README.md", "requirements.txt"]
+"options":
+  "basic":
+    "use_venv": !!bool "true"
+    "packages": []
+    "python_packages": []
+    "include_system_packages": !!bool "false"
+  "openstack": {}
+  "cinder-netapp": {}
+"repo": "https://github.com/openstack-charmers/cinder-storage-backend-template"
+"config":
+  "deletes":
+  - "debug"
+  - "verbose"
+  - "use-syslog"
+  - "use-internal-endpoints"
+"is": "cinder-netapp"
