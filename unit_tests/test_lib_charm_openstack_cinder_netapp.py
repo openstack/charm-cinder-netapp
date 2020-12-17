@@ -19,7 +19,7 @@ import charm.openstack.cinder_netapp as cinder_netapp
 import charms_openstack.test_utils as test_utils
 
 
-class TestCindernetappCharm(test_utils.PatchHelper):
+class TestCinderNetAppCharm(test_utils.PatchHelper):
 
     def _patch_config_and_charm(self, config):
         self.patch_object(charmhelpers.core.hookenv, 'config')
@@ -30,7 +30,7 @@ class TestCindernetappCharm(test_utils.PatchHelper):
             return config
 
         self.config.side_effect = cf
-        c = cinder_netapp.CindernetappCharm()
+        c = cinder_netapp.CinderNetAppCharm()
         return c
 
     def test_cinder_base(self):

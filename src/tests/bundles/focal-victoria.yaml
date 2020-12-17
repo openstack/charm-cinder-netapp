@@ -51,7 +51,6 @@ applications:
       netapp-login: admin
       netapp-password: Passw0rd
       use-multipath: True
-
   rabbitmq-server:
     charm: cs:~openstack-charmers-next/rabbitmq-server
     num_units: 1
