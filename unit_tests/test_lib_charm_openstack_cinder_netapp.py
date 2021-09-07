@@ -1,4 +1,4 @@
-# Copyright 2016 Canonical Ltd
+# Copyright 2021 Canonical Ltd
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -36,13 +36,45 @@ class TestCinderNetAppCharm(test_utils.PatchHelper):
     def test_cinder_base(self):
         charm = self._patch_config_and_charm({})
         self.assertEqual(charm.name, 'cinder_netapp')
+        self.assertTrue(charm.stateless)
+        config = {k: v for (k, v) in charm.cinder_configuration()}
+        self.assertIn('netapp_storage_family', config)
+        self.assertIsNone(config['netapp_storage_family'])
+        self.assertIn('netapp_storage_protocol', config)
+        self.assertIsNone(config['netapp_storage_protocol'])
+        self.assertIn('netapp_server_hostname', config)
+        self.assertIsNone(config['netapp_server_hostname'])
+        self.assertIn('volume_backend_name', config)
+        self.assertIsNone(config['volume_backend_name'])
+        self.assertEqual(config.get('volume_driver'),
+                         'cinder.volume.drivers.netapp.common.NetAppDriver')
 
-    def test_cinder_configuration(self):
-        charm = self._patch_config_and_charm({'a': 'b'})
+    def test_cinder_https(self):
+        charm = self._patch_config_and_charm({'netapp-server-port': 443})
         config = charm.cinder_configuration()
-        # Add check here that configuration is as expected.
-        self.assertEqual(config, [('netapp_hostname', None),
-                                  ('netapp_login', None),
-                                  ('netapp_password', None),
-                                  ('volume_driver', None),
-                                  ('volume_backend_name', None)])
+        self.assertIn(('netapp_transport_type', 'https'), config)
+
+    def test_cinder_eseries(self):
+        econfig = {'netapp-storage-family': 'eseries',
+                   'netapp-controller-ips': '10.0.0.1',
+                   'netapp-array-password': 'abc123',
+                   'netapp-storage-pools': 'somePool',
+                   'use-multipath': True}
+        charm = self._patch_config_and_charm(econfig)
+        config = charm.cinder_configuration()
+        self.assertIn(('netapp_controller_ips',
+                       econfig['netapp-controller-ips']), config)
+        self.assertIn(('netapp_sa_password',
+                       econfig['netapp-array-password']), config)
+        self.assertIn(('netapp_storage_pools',
+                       econfig['netapp-storage-pools']), config)
+        self.assertIn(('use_multipath_for_image_xfer',
+                       econfig['use-multipath']), config)
+        self.assertFalse(any(q[0] == 'nfs_shares_config' for q in config))
+
+        econfig = {'netapp-storage-protocol': 'nfs',
+                   'netapp-nfs-shares-config': 'NFSCONFIG'}
+        charm = self._patch_config_and_charm(econfig)
+        config = charm.cinder_configuration()
+        self.assertIn(('nfs_shares_config',
+                       econfig['netapp-nfs-shares-config']), config)
