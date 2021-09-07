@@ -1,3 +1,18 @@
+# Copyright 2021 Canonical Ltd
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#  http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
 import charms_openstack.charm
 
 charms_openstack.charm.use_defaults('charm.default-select-release')
@@ -14,42 +29,45 @@ class CinderNetAppCharm(
     stateless = True
     # Specify any config that the user *must* set.
     mandatory_config = [
-        'netapp-storage-family', 'netapp-storage-protocol', 'netapp-server-hostname',
-        'volume-backend-name']
+        'netapp-storage-family', 'netapp-storage-protocol',
+        'netapp-server-hostname', 'volume-backend-name']
 
     def cinder_configuration(self):
-        service = self.config.get('volume-backend-name')
+        cget = self.config.get
+        service = cget('volume-backend-name')
         volumedriver = 'cinder.volume.drivers.netapp.common.NetAppDriver'
         driver_options_extension = []
         driver_transport = []
         driver_options_common = [
-            ('netapp_storage_family', self.config.get('netapp-storage-family')),
-            ('netapp_storage_protocol', self.config.get('netapp-storage-protocol')),
-            ('netapp_vserver', self.config.get('netapp-vserver')),
-            ('netapp_server_hostname', self.config.get('netapp-server-hostname')),
-            ('netapp_server_port', self.config.get('netapp-server-port')),
-            ('use_multipath_for_image_xfer', self.config.get('use-multipath')),
-            ('netapp_login', self.config.get('netapp-login')),
-            ('netapp_password', self.config.get('netapp-password')),
+            ('netapp_storage_family', cget('netapp-storage-family')),
+            ('netapp_storage_protocol', cget('netapp-storage-protocol')),
+            ('netapp_vserver', cget('netapp-vserver')),
+            ('netapp_server_hostname', cget('netapp-server-hostname')),
+            ('netapp_server_port', cget('netapp-server-port')),
+            ('use_multipath_for_image_xfer', cget('use-multipath')),
+            ('netapp_login', cget('netapp-login')),
+            ('netapp_password', cget('netapp-password')),
             ('volume_driver', volumedriver),
             ('volume_backend_name', service)]
 
-        if self.config.get('netapp-server-port') == 443:
+        if cget('netapp-server-port') == 443:
             driver_transport = [
                 ('netapp_transport_type', "https")]
 
-        if self.config.get('netapp-storage-family') == "eseries":
+        if cget('netapp-storage-family') == "eseries":
             driver_options_extension = [
-                ('netapp_controller_ips', self.config.get('netapp-controller-ips')),
-                ('netapp_sa_password', self.config.get('netapp-array-password')),
-                ('netapp_storage_pools', self.config.get('netapp-storage-pools')),
-                ('use_multipath_for_image_xfer', self.config.get('use-multipath'))]
+                ('netapp_controller_ips', cget('netapp-controller-ips')),
+                ('netapp_sa_password', cget('netapp-array-password')),
+                ('netapp_storage_pools', cget('netapp-storage-pools')),
+                ('use_multipath_for_image_xfer', cget('use-multipath'))]
 
-        if self.config.get('netapp-storage-protocol') == "nfs":
+        if cget('netapp-storage-protocol') == "nfs":
             driver_options_extension = [
-                ('nfs_shares_config', self.config.get('netapp-nfs-shares-config'))]
+                ('nfs_shares_config', cget('netapp-nfs-shares-config'))]
 
-        return driver_options_common + driver_transport + driver_options_extension
+        return driver_options_common + driver_transport + \
+            driver_options_extension
+
 
 class CinderNetAppCharmRocky(CinderNetAppCharm):
 
@@ -57,4 +75,3 @@ class CinderNetAppCharmRocky(CinderNetAppCharm):
     release = 'rocky'
     version_package = 'cinder-common'
     packages = []
-
