@@ -4,6 +4,6 @@ tests:
 configure:
   - zaza.openstack.charm_tests.keystone.setup.add_demo_user
 gate_bundles:
-  - xenial-stein
+  - bionic-ussuri
 smoke_bundles:
-  - xenial-stein
+  - bionic-ussuri

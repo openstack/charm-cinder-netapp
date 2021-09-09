@@ -42,7 +42,11 @@ applications:
     series: bionic
     charm: cinder-netapp
     options:
-# Add config options here
+      netapp-vserver: 'svm01'
+      netapp-server-hostname: '10.246.115.6'
+      netapp-server-port: '80'
+      netapp-login: 'vsadmin'
+      netapp-password: 'Ubuntu123'
   rabbitmq-server:
     charm: cs:~openstack-charmers-next/rabbitmq-server
     num_units: 1
