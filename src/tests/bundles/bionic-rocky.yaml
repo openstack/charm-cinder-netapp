@@ -27,18 +27,16 @@ applications:
   keystone:
     charm: cs:~openstack-charmers-next/keystone
     options:
-      openstack-origin: cloud:bionic-ussuri
+      openstack-origin: cloud:bionic-rocky
     num_units: 1
     to:
     - '1'
   cinder:
     series: bionic
     num_units: 1
-    storage:
-      block-devices: '40G'
     options:
-      openstack-origin: cloud:bionic-ussuri
-      block-device: None
+      openstack-origin: cloud:bionic-rocky
+      block-device: /dev/vdb
       overwrite: "true"
       ephemeral-unmount: /mnt
     to:

@@ -1,6 +1,6 @@
-series: focal
+series: groovy
 variables:
-  openstack-origin: &openstack-origin cloud:focal-victoria
+  openstack-origin: &openstack-origin distro
 comment:
 - 'machines section to decide order of deployment. database sooner = faster'
 machines:
