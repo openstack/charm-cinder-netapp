@@ -37,32 +37,38 @@ class CindernetappTest(test_utils.OpenStackBaseTest):
             cls.keystone_session)
 
     def test_cinder_config(self):
-        logging.info('netapp')
+        """Test that configuration options match our expectations."""
+        logging.info('cinder-netapp')
         expected_contents = {
             'cinder-netapp': {
-                'iscsi_helper': ['tgtadm'],
-                'volume_dd_blocksize': ['512']}}
+                'netapp_storage_family': ['ontap_cluster'],
+                'netapp_storage_protocol': ['iscsi'],
+                'volume_backend_name': ['cinder_netapp'],
+                'volume_driver': ['cinder.volume.drivers.netapp.common.NetAppDriver'],
+            }}
 
         zaza.model.run_on_leader(
             'cinder',
-            'sudo cp /etc/cinder/cinder.conf /tmp/',
-            model_name=self.model_name)
+            'sudo cp /etc/cinder/cinder.conf /tmp/')
         zaza.model.block_until_oslo_config_entries_match(
             'cinder',
             '/tmp/cinder.conf',
             expected_contents,
-            model_name=self.model_name,
             timeout=2)
 
     def test_create_volume(self):
+        """Test creating a volume with basic configuration."""
         test_vol_name = "zaza{}".format(uuid.uuid1().fields[0])
         vol_new = self.cinder_client.volumes.create(
             name=test_vol_name,
-            size=2)
+            size='1')
         openstack_utils.resource_reaches_status(
             self.cinder_client.volumes,
             vol_new.id,
-            expected_status='available')
+            wait_iteration_max_time=12000,
+            stop_after_attempt=5,
+            expected_status='available',
+            msg='Volume status wait')
         test_vol = self.cinder_client.volumes.find(name=test_vol_name)
         self.assertEqual(
             getattr(test_vol, 'os-vol-host-attr:host').split('#')[0],
