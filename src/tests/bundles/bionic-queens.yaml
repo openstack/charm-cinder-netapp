@@ -30,7 +30,7 @@ applications:
     to:
     - '1'
   cinder:
-    series: bionic
+    charm: cs:~openstack-charmers-next/cinder
     num_units: 1
     options:
       block-device: /dev/vdb
@@ -40,6 +40,10 @@ applications:
     - '2'
   cinder-netapp:
     charm: cinder-netapp
+    options:
+      netapp-storage-family: ontap_cluster
+      netapp-storage-protocol: iscsi
+      volume-backend-name: NETAPP
   rabbitmq-server:
     charm: cs:~openstack-charmers-next/rabbitmq-server
     num_units: 1

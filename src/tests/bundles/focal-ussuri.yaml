@@ -66,5 +66,9 @@ applications:
       - '5'
   cinder-netapp:
     charm: cinder-netapp
+    options:
+      netapp-storage-family: ontap_cluster
+      netapp-storage-protocol: iscsi
+      volume-backend-name: NETAPP
   cinder-mysql-router:
     charm: cs:~openstack-charmers/mysql-router
