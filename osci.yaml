@@ -1,0 +1,17 @@
+- project:
+    templates:
+      - charm-unit-jobs
+    check:
+      jobs:
+      - hirsute-wallaby
+      - groovy-victoria
+      - focal-victoria
+      - focal-ussuri
+      - bionic-ussuri
+      - bionic-queens
+      - bionic-stein
+      - bionic-train
+      - bionic-rocky
+    vars:
+      needs_charm_build: true
+      charm_build_name: cinder-netapp
