@@ -5,8 +5,7 @@ config:
     - verbose
     - use-syslog
     - use-internal-endpoints
-options:
-  basic:
-    use_venv: True
-repo: https://github.com/openstack-charmers/cinder-storage-backend-template
-is: 'cinder-netapp'
+    - ssl_ca
+    - ssl_cert
+    - ssl_key
+repo: https://github.com/lmlg/charm-cinder-netapp
