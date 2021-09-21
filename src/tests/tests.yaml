@@ -1,6 +1,6 @@
 charm_name: cinder-netapp
 tests:
-  - zaza.openstack.charm_tests.cinder_netapp.CinderNetAppTest
+  - zaza.openstack.charm_tests.cinder_netapp.tests.CinderNetAppTest
 configure:
   - zaza.openstack.charm_tests.keystone.setup.add_demo_user
 gate_bundles:
