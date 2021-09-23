@@ -6,6 +6,7 @@ machines:
     constraints: mem=3072M
   '1':
   '2':
+    constraints: mem=4G root-disk=16G
   '3':
 relations:
 - - keystone:shared-db
