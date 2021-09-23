@@ -11,7 +11,13 @@ gate_bundles:
   - bionic-ussuri
   - focal-ussuri
   - focal-victoria
+  - focal-wallaby
   - groovy-victoria
   - hirsute-wallaby
 smoke_bundles:
-  - bionic-queens
+  - bionic-ussuri
+dev_bundles:
+  - impish-xena
+test_options:
+  force_deploy:
+    - impish-xena
