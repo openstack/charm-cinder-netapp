@@ -12,11 +12,11 @@ This section covers common and/or important configuration options. See file `con
 
 ### `netapp-storage-family`
 
-The storage family type that is used for the storage system. Can be "ontap_cluster" for clustering data ONTAP, or "eseries".
+The storage family type that is used for the storage system. Can be `ontap_cluster` for clustering data ONTAP, or `eseries`.
 
 ### `netapp-storage-protocol`
 
-The SAN protocol to use. Can be either "iscsi" or "NFS".
+The SAN protocol to use. Can be either `iscsi` or `NFS`.
 
 ### `netapp-vserver`
 
@@ -38,7 +38,7 @@ The username used to access the storage server or proxy.
 
 ### `netapp-password`
 
-The password used to authenticate the "login" option.
+The password used to authenticate the `login` option.
 
 ### `netapp-nfs-shares-config`
 
@@ -47,7 +47,7 @@ Cinder volumes.
 
 ### `netapp-controller-ips`
 
-If the storage family is "eseries", this option specifies a comma-separated list of controller hostnames or IP addresses
+If the storage family is `eseries`, this option specifies a comma-separated list of controller hostnames or IP addresses
 to be used for provisioning.
 
 ### `netapp-array-password`
@@ -74,7 +74,7 @@ The service name to present to Cinder.
 
 This charm's primary use is as a backend for the cinder charm. To do so, add a relation betweeen both charms:
 
-  juju add-relation cinder-netapp:storage-backend cinder:storage-backend
+    juju add-relation cinder-netapp:storage-backend cinder:storage-backend
 
 ## Actions
 
