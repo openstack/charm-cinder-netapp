@@ -36,7 +36,7 @@ class TestCinderNetAppCharm(test_utils.PatchHelper):
     def test_cinder_base(self):
         charm = self._patch_config_and_charm({})
         self.assertEqual(charm.name, 'cinder_netapp')
-        self.assertTrue(charm.stateless)
+        self.assertFalse(charm.stateless)
         config = {k: v for (k, v) in charm.cinder_configuration()}
         self.assertIn('netapp_storage_family', config)
         self.assertIsNone(config['netapp_storage_family'])
@@ -48,6 +48,11 @@ class TestCinderNetAppCharm(test_utils.PatchHelper):
         self.assertIsNone(config['volume_backend_name'])
         self.assertEqual(config.get('volume_driver'),
                          'cinder.volume.drivers.netapp.common.NetAppDriver')
+
+    def test_cinder_cluster_config(self):
+        charm = self._patch_config_and_charm({'cluster-cinder-volume': True})
+        charm.cinder_configuration()
+        self.assertTrue(charm.stateless)
 
     def test_cinder_https(self):
         charm = self._patch_config_and_charm({'netapp-server-port': 443})
@@ -78,3 +83,35 @@ class TestCinderNetAppCharm(test_utils.PatchHelper):
         config = charm.cinder_configuration()
         self.assertIn(('nfs_shares_config',
                        econfig['netapp-nfs-shares-config']), config)
+
+    def test_cinder_iscsi_options(self):
+        econfig = {'netapp-pool-name-search-pattern': 'foo.*bar',
+                   'netapp-lun-space-reservation': True,
+                   'netapp-storage-protocol': 'iscsi'}
+        charm = self._patch_config_and_charm(econfig)
+        config = charm.cinder_configuration()
+        self.assertIn(('netapp_pool_name_search_pattern',
+                         econfig['netapp-pool-name-search-pattern']), config)
+        self.assertIn(('netapp_lun_space_reservation',
+                         'enabled'), config)
+
+    def test_cinder_fc_options(self):
+        econfig = {'netapp-pool-name-search-pattern': 'foo.*bar',
+                   'netapp-lun-space-reservation': True,
+                   'netapp-storage-protocol': 'fc'}
+        charm = self._patch_config_and_charm(econfig)
+        config = charm.cinder_configuration()
+        self.assertIn(('netapp_pool_name_search_pattern',
+                         econfig['netapp-pool-name-search-pattern']), config)
+        self.assertIn(('netapp_lun_space_reservation',
+                         'enabled'), config)
+
+    def test_cinder_iscsi_fc_options_not_included(self):
+        econfig = {'netapp-pool-name-search-pattern': 'foo.*bar',
+                   'netapp-lun-space-reservation': True}
+        charm = self._patch_config_and_charm(econfig)
+        config = charm.cinder_configuration()
+        self.assertNotIn(('netapp_pool_name_search_pattern',
+                         econfig['netapp-pool-name-search-pattern']), config)
+        self.assertNotIn(('netapp_lun_space_reservation',
+                         'enabled'), config)
