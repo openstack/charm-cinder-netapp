@@ -12,6 +12,7 @@ gate_bundles:
   - focal-ussuri
   - focal-victoria
   - focal-wallaby
+  - focal-xena
   - groovy-victoria
   - hirsute-wallaby
 smoke_bundles:
