@@ -1,58 +1,76 @@
 series: focal
+variables:
+  openstack-origin: &openstack-origin cloud:focal-victoria
 comment:
 - 'machines section to decide order of deployment. database sooner = faster'
 machines:
   '0':
     constraints: mem=3072M
   '1':
+    constraints: mem=3072M
   '2':
+    constraints: mem=3072M
   '3':
+  '4':
+  '5':
+    constraints: mem=4G root-disk=16G
 relations:
-- - keystone:shared-db
-  - mysql:shared-db
-- - cinder:shared-db
-  - mysql:shared-db
-- - cinder:identity-service
-  - keystone:identity-service
-- - cinder:amqp
-  - rabbitmq-server:amqp
-- - cinder:storage-backend
-  - cinder-netapp:storage-backend
+  - - keystone:shared-db
+    - keystone-mysql-router:shared-db
+  - - keystone-mysql-router:db-router
+    - mysql-innodb-cluster:db-router
+  - - cinder:shared-db
+    - cinder-mysql-router:shared-db
+  - - cinder-mysql-router:db-router
+    - mysql-innodb-cluster:db-router
+  - - cinder:identity-service
+    - keystone:identity-service
+  - - cinder:amqp
+    - rabbitmq-server:amqp
+  - - cinder:storage-backend
+    - cinder-netapp:storage-backend
 applications:
-  mysql:
-    charm: cs:~openstack-charmers-next/percona-cluster
-    num_units: 1
+  mysql-innodb-cluster:
+    charm: cs:~openstack-charmers-next/mysql-innodb-cluster
+    num_units: 3
+    options:
+      source: *openstack-origin
     to:
-    - '0'
+      - '0'
+      - '1'
+      - '2'
+  rabbitmq-server:
+    charm: cs:~openstack-charmers-next/rabbitmq-server
+    num_units: 1
+    options:
+      source: *openstack-origin
+    to:
+      - '3'
   keystone:
     charm: cs:~openstack-charmers-next/keystone
-    num_units: 1
     options:
-      openstack-origin: distro
+      openstack-origin: *openstack-origin
+    num_units: 1
     to:
-    - '1'
+      - '4'
+  keystone-mysql-router:
+    charm: cs:~openstack-charmers-next/mysql-router
   cinder:
     charm: cs:~openstack-charmers-next/cinder
+    storage:
+      block-devices: '40G'
     num_units: 1
     options:
-      openstack-origin: distro
+      openstack-origin: *openstack-origin
+      block-device: None
+      overwrite: "true"
     to:
-    - '2'
+      - '5'
   cinder-netapp:
-    series: focal
     charm: cinder-netapp
     options:
       netapp-storage-family: ontap_cluster
       netapp-storage-protocol: iscsi
-      netapp-vserver: 'hou-cloud'
-      netapp-server-hostname: '10.10.10.10'
-      volume-backend-name: cinder-netapp
-      netapp-server-port: 80
-      netapp-login: admin
-      netapp-password: Passw0rd
-      use-multipath: True
-  rabbitmq-server:
-    charm: cs:~openstack-charmers-next/rabbitmq-server
-    num_units: 1
-    to:
-    - '3'
+      volume-backend-name: NETAPP
+  cinder-mysql-router:
+    charm: cs:~openstack-charmers-next/mysql-router
