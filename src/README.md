@@ -76,14 +76,6 @@ This charm's primary use is as a backend for the cinder charm. To do so, add a r
 
     juju add-relation cinder-netapp:storage-backend cinder:storage-backend
 
-## Actions
-
-This section lists Juju [actions][juju-docs-actions] supported by the charm. Actions allow specific operations to be performed on a per-unit basis. To display action descriptions run `juju actions --schema cinder-netapp`. If the charm is not deployed then see file `actions.yaml`.
-
-* `pause`
-* `resume`
-* `restart-services`
-
 # Documentation
 
 The OpenStack Charms project maintains two documentation guides:
