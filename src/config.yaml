@@ -3,6 +3,11 @@
     "type": "string"
     "default": "cinder_netapp"
     "description": "Service name to present to Cinder"
+  "cluster-cinder-volume":
+    "type": "boolean"
+    "default": !!bool "false"
+    "description": |
+      Whether to handle all cinder-volume services as a cluster.
   "netapp-storage-family":
     "type": "string"
     "default": "ontap_cluster"
@@ -78,6 +83,25 @@
     "description": |
       Use multipath for image transfer. The volume_use_multipath
       option should be set to True in the nova.conf
+  "netapp-pool-name-search-pattern":
+    "type": "string"
+    "default": !!null ""
+    "description": |
+      This option is used to restrict provisioning to the
+      specified pools. Specify the value of this option to
+      be a regular expression which will be applied to the
+      names of objects from the storage backend which
+      represent pools in Cinder. This option is only
+      utilized when the storage protocol is configured to
+      use iSCSI or FC.
+  "netapp-lun-space-reservation":
+    "type": "boolean"
+    "default": !!bool "true"
+    "description": |
+      This option determines if storage space is reserved
+      for LUN allocation. If enabled, LUNs are thick
+      provisioned. If space reservation is disabled,
+      storage space is allocated on demand.
   "netapp-enable-multiattach":
     "type": "boolean"
     "default": !!bool "false"
