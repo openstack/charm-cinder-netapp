@@ -49,11 +49,6 @@ class TestCinderNetAppCharm(test_utils.PatchHelper):
         self.assertEqual(config.get('volume_driver'),
                          'cinder.volume.drivers.netapp.common.NetAppDriver')
 
-    def test_cinder_cluster_config(self):
-        charm = self._patch_config_and_charm({'cluster-cinder-volume': True})
-        charm.cinder_configuration()
-        self.assertTrue(charm.stateless)
-
     def test_cinder_https(self):
         charm = self._patch_config_and_charm({'netapp-server-port': 443})
         config = charm.cinder_configuration()
@@ -91,9 +86,9 @@ class TestCinderNetAppCharm(test_utils.PatchHelper):
         charm = self._patch_config_and_charm(econfig)
         config = charm.cinder_configuration()
         self.assertIn(('netapp_pool_name_search_pattern',
-                         econfig['netapp-pool-name-search-pattern']), config)
+                       econfig['netapp-pool-name-search-pattern']), config)
         self.assertIn(('netapp_lun_space_reservation',
-                         'enabled'), config)
+                       'enabled'), config)
 
     def test_cinder_fc_options(self):
         econfig = {'netapp-pool-name-search-pattern': 'foo.*bar',
@@ -102,9 +97,9 @@ class TestCinderNetAppCharm(test_utils.PatchHelper):
         charm = self._patch_config_and_charm(econfig)
         config = charm.cinder_configuration()
         self.assertIn(('netapp_pool_name_search_pattern',
-                         econfig['netapp-pool-name-search-pattern']), config)
+                       econfig['netapp-pool-name-search-pattern']), config)
         self.assertIn(('netapp_lun_space_reservation',
-                         'enabled'), config)
+                       'enabled'), config)
 
     def test_cinder_iscsi_fc_options_not_included(self):
         econfig = {'netapp-pool-name-search-pattern': 'foo.*bar',
