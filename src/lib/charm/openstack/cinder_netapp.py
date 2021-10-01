@@ -26,9 +26,7 @@ class CinderNetAppCharm(
     release = 'ocata'
     packages = []
     release_pkg = 'cinder-common'
-    # iscsi is stateful, fibre channel can be either stateful or stateless,
-    # nfs is stateless. Regardless, the driver may not cope well with
-    # cinder-volume service clustering, so let's allow it to be configurable
+    # The cinder-netapp driver currently does not support ACTIVE-ACTIVE
     stateless = False
     # Specify any config that the user *must* set.
     mandatory_config = [
@@ -38,12 +36,6 @@ class CinderNetAppCharm(
     def cinder_configuration(self):
         cget = self.config.get
         service = cget('volume-backend-name')
-
-        # Regardless of stateless or stateful what we really want is whether
-        # to configure cinder volume services as a cluster. This can be done
-        # in different ways and for different reasons, ideally this
-        # variable passed through relation should be renamed.
-        self.stateless = cget('cluster-cinder-volume')
 
         volumedriver = 'cinder.volume.drivers.netapp.common.NetAppDriver'
         driver_options_extension = []
@@ -76,9 +68,11 @@ class CinderNetAppCharm(
                 ('nfs_shares_config', cget('netapp-nfs-shares-config'))]
 
         if cget('netapp-storage-protocol') in ("iscsi", "fc"):
-            lun_space_reservation = cget(
-                    'netapp-lun-space-reservation')
-            lun_space_reservation = 'enabled' if lun_space_reservation is True else 'disabled'
+            lun_space_reservation = cget('netapp-lun-space-reservation')
+            if lun_space_reservation is True:
+                lun_space_reservation = 'enabled'
+            else:
+                lun_space_reservation = 'disabled'
             driver_options_extension += [
                 ('netapp_pool_name_search_pattern', cget(
                     'netapp-pool-name-search-pattern')),

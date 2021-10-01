@@ -3,11 +3,6 @@
     "type": "string"
     "default": "cinder_netapp"
     "description": "Service name to present to Cinder"
-  "cluster-cinder-volume":
-    "type": "boolean"
-    "default": !!bool "false"
-    "description": |
-      Whether to handle all cinder-volume services as a cluster.
   "netapp-storage-family":
     "type": "string"
     "default": "ontap_cluster"
