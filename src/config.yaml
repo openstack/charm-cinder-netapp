@@ -68,10 +68,6 @@
     "default": !!null ""
     "description": |
       Password for the NetApp E-Series storage array.
-  "netapp-storage-pools":
-    "type": "string"
-    "default": !!null ""
-    "description": "comma seperated list of pool names ie: pool1,pool2"
   "use-multipath":
     "type": "boolean"
     "default": !!bool "true"

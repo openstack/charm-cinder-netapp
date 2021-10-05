@@ -50,7 +50,10 @@ class CinderNetAppCharm(
             ('netapp_login', cget('netapp-login')),
             ('netapp_password', cget('netapp-password')),
             ('volume_driver', volumedriver),
-            ('volume_backend_name', service)]
+            ('volume_backend_name', service),
+            ('netapp_pool_name_search_pattern', cget(
+                'netapp-pool-name-search-pattern'))
+        ]
 
         if cget('netapp-server-port') == 443:
             driver_transport = [
@@ -60,7 +63,6 @@ class CinderNetAppCharm(
             driver_options_extension = [
                 ('netapp_controller_ips', cget('netapp-controller-ips')),
                 ('netapp_sa_password', cget('netapp-array-password')),
-                ('netapp_storage_pools', cget('netapp-storage-pools')),
                 ('use_multipath_for_image_xfer', cget('use-multipath'))]
 
         if cget('netapp-storage-protocol') == "nfs":
@@ -74,8 +76,6 @@ class CinderNetAppCharm(
             else:
                 lun_space_reservation = 'disabled'
             driver_options_extension += [
-                ('netapp_pool_name_search_pattern', cget(
-                    'netapp-pool-name-search-pattern')),
                 ('netapp_lun_space_reservation', lun_space_reservation)]
 
         return (driver_options_common + driver_transport +

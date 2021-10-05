@@ -58,7 +58,7 @@ class TestCinderNetAppCharm(test_utils.PatchHelper):
         econfig = {'netapp-storage-family': 'eseries',
                    'netapp-controller-ips': '10.0.0.1',
                    'netapp-array-password': 'abc123',
-                   'netapp-storage-pools': 'somePool',
+                   'netapp-pool-name-search-pattern': 'foo.*bar',
                    'use-multipath': True}
         charm = self._patch_config_and_charm(econfig)
         config = charm.cinder_configuration()
@@ -66,8 +66,8 @@ class TestCinderNetAppCharm(test_utils.PatchHelper):
                        econfig['netapp-controller-ips']), config)
         self.assertIn(('netapp_sa_password',
                        econfig['netapp-array-password']), config)
-        self.assertIn(('netapp_storage_pools',
-                       econfig['netapp-storage-pools']), config)
+        self.assertIn(('netapp_pool_name_search_pattern',
+                       econfig['netapp-pool-name-search-pattern']), config)
         self.assertIn(('use_multipath_for_image_xfer',
                        econfig['use-multipath']), config)
         self.assertFalse(any(q[0] == 'nfs_shares_config' for q in config))
@@ -102,11 +102,8 @@ class TestCinderNetAppCharm(test_utils.PatchHelper):
                        'enabled'), config)
 
     def test_cinder_iscsi_fc_options_not_included(self):
-        econfig = {'netapp-pool-name-search-pattern': 'foo.*bar',
-                   'netapp-lun-space-reservation': True}
+        econfig = {'netapp-lun-space-reservation': True}
         charm = self._patch_config_and_charm(econfig)
         config = charm.cinder_configuration()
-        self.assertNotIn(('netapp_pool_name_search_pattern',
-                         econfig['netapp-pool-name-search-pattern']), config)
         self.assertNotIn(('netapp_lun_space_reservation',
                          'enabled'), config)
