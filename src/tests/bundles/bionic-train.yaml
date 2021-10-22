@@ -21,19 +21,19 @@ relations:
   - cinder-netapp:storage-backend
 applications:
   mysql:
-    charm: cs:~openstack-charmers-next/percona-cluster
+    charm: cs:~openstack-charmers/percona-cluster
     num_units: 1
     to:
     - '0'
   keystone:
-    charm: cs:~openstack-charmers-next/keystone
+    charm: cs:~openstack-charmers/keystone
     options:
       openstack-origin: cloud:bionic-train
     num_units: 1
     to:
     - '1'
   cinder:
-    charm: cs:~openstack-charmers-next/cinder
+    charm: cs:~openstack-charmers/cinder
     num_units: 1
     storage:
       block-devices: '40G'
@@ -50,7 +50,7 @@ applications:
       netapp-storage-protocol: iscsi
       volume-backend-name: NETAPP
   rabbitmq-server:
-    charm: cs:~openstack-charmers-next/rabbitmq-server
+    charm: cs:~openstack-charmers/rabbitmq-server
     num_units: 1
     to:
     - '3'

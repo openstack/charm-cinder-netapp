@@ -31,7 +31,7 @@ relations:
     - cinder-netapp:storage-backend
 applications:
   mysql-innodb-cluster:
-    charm: cs:~openstack-charmers-next/mysql-innodb-cluster
+    charm: cs:~openstack-charmers/mysql-innodb-cluster
     num_units: 3
     options:
       source: *openstack-origin
@@ -40,7 +40,7 @@ applications:
       - '1'
       - '2'
   rabbitmq-server:
-    charm: cs:~openstack-charmers-next/rabbitmq-server
+    charm: cs:~openstack-charmers/rabbitmq-server
     num_units: 1
     options:
       source: *openstack-origin
@@ -54,9 +54,9 @@ applications:
     to:
       - '4'
   keystone-mysql-router:
-    charm: cs:~openstack-charmers-next/mysql-router
+    charm: cs:~openstack-charmers/mysql-router
   cinder:
-    charm: cs:~openstack-charmers-next/cinder
+    charm: cs:~openstack-charmers/cinder
     num_units: 1
     storage:
       block-devices: '40G'
@@ -73,4 +73,4 @@ applications:
       netapp-storage-protocol: iscsi
       volume-backend-name: NETAPP
   cinder-mysql-router:
-    charm: cs:~openstack-charmers-next/mysql-router
+    charm: cs:~openstack-charmers/mysql-router
