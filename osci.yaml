@@ -1,13 +1,19 @@
 - project:
     templates:
-      - charm-unit-jobs
-      - charm-functional-jobs
+      - charm-unit-jobs-py38
+      - charm-unit-jobs-py39
+      - charm-xena-functional-jobs
+      - charm-yoga-functional-jobs
     check:
       jobs:
-        - focal-xena:
+        - focal-xena
+        - focal-yoga:
             voting: false
         - impish-xena:
+            voting: false
+        - jammy-yoga:
             voting: false
     vars:
       needs_charm_build: true
       charm_build_name: cinder-netapp
+      build_type: charmcraft
