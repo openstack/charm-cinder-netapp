@@ -51,10 +51,11 @@ class CinderNetAppCharm(
             ('netapp_password', cget('netapp-password')),
             ('volume_driver', volumedriver),
             ('volume_backend_name', service),
-            ('netapp_pool_name_search_pattern', cget(
-                'netapp-pool-name-search-pattern'))
         ]
-
+        pool_name_search_pattern = cget('netapp-pool-name-search-pattern')
+        if pool_name_search_pattern:
+            driver_options_common += [
+                ('netapp_pool_name_search_pattern', pool_name_search_pattern)]
         if cget('netapp-server-port') == 443:
             driver_transport = [
                 ('netapp_transport_type', "https")]
