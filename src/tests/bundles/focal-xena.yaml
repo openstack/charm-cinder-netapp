@@ -2,7 +2,8 @@ series: focal
 local_overlay_enabled: False
 
 variables:
-  openstack-origin: &openstack-origin cloud:focal-xena
+  # Use proposed until https://pad.lv/1948507 is fix released
+  openstack-origin: &openstack-origin cloud:focal-xena/proposed
 comment:
 - 'machines section to decide order of deployment. database sooner = faster'
 machines:
