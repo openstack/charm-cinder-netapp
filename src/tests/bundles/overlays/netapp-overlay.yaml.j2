@@ -1,0 +1,9 @@
+applications:
+  cinder-netapp:
+    options:
+      netapp-vserver: {{ TEST_NETAPP_SAN_VSERVER }}
+      netapp-server-hostname: {{ TEST_NETAPP_SAN_IP }}
+      netapp-server-port: {{ TEST_NETAPP_SAN_PORT }}
+      netapp-login: {{ TEST_NETAPP_SAN_USERNAME }}
+      netapp-password: {{ TEST_NETAPP_SAN_PASSWORD }}
+      netapp-pool-name-search-pattern: {{ TEST_NETAPP_POOL_NAME_SEARCH_PATTERN }}
