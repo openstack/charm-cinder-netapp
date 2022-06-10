@@ -4,14 +4,13 @@ tests:
 configure:
   - zaza.openstack.charm_tests.keystone.setup.add_demo_user
 gate_bundles:
-  - focal-xena
-smoke_bundles:
-  - focal-xena
-dev_bundles:
-  - focal-yoga
-  - impish-xena
   - jammy-yoga
+smoke_bundles:
+  - jammy-yoga
+dev_bundles:
+  - jammy-yoga
+  - jammy-zed
+  - kinetic-zed
 test_options:
   force_deploy:
-    - impish-xena
-    - jammy-yoga
+    - kinetic-zed
