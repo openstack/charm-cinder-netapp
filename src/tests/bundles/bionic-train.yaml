@@ -21,36 +21,38 @@ relations:
   - cinder-netapp:storage-backend
 applications:
   mysql:
-    charm: cs:~openstack-charmers/percona-cluster
+    charm: ch:percona-cluster
     num_units: 1
     to:
     - '0'
+    channel: 5.7/edge
   keystone:
-    charm: cs:~openstack-charmers/keystone
+    charm: ch:keystone
     options:
       openstack-origin: cloud:bionic-train
     num_units: 1
     to:
     - '1'
+    channel: train/edge
   cinder:
-    charm: cs:~openstack-charmers/cinder
+    charm: ch:cinder
     num_units: 1
-    storage:
-      block-devices: '40G'
     options:
       openstack-origin: cloud:bionic-train
       block-device: None
       overwrite: "true"
     to:
     - '2'
+    channel: train/edge
   cinder-netapp:
-    charm: cinder-netapp
+    charm: ../../../cinder-netapp.charm
     options:
       netapp-storage-family: ontap_cluster
       netapp-storage-protocol: iscsi
       volume-backend-name: NETAPP
   rabbitmq-server:
-    charm: cs:~openstack-charmers/rabbitmq-server
+    charm: ch:rabbitmq-server
     num_units: 1
     to:
     - '3'
+    channel: 3.6/edge
