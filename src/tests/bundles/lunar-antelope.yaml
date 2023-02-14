@@ -1,4 +1,4 @@
-series: jammy
+series: lunar
 local_overlay_enabled: False
 
 variables:
