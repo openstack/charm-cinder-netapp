@@ -3,6 +3,15 @@
     "type": "string"
     "default": "cinder_netapp"
     "description": "Service name to present to Cinder"
+  "max-over-subscription-ratio":
+    "type": "string"
+    "default": !!null ""
+    "description": |
+      Default ratio is 20.0, meaning provisioned capacity can be 20
+      times of the total physical capacity. This parameter also can be
+      set as "auto". When using auto, Cinder will automatically
+      calculate the max_over_subscription_ratio based on the provisioned
+      capacity and the used space.
   "netapp-storage-family":
     "type": "string"
     "default": "ontap_cluster"
