@@ -79,6 +79,14 @@ class CinderNetAppCharm(
             driver_options_extension += [
                 ('netapp_lun_space_reservation', lun_space_reservation)]
 
+        if cget("max-over-subscription-ratio"):
+            driver_options_common += [
+                (
+                    "max_over_subscription_ratio",
+                    cget("max-over-subscription-ratio"),
+                )
+            ]
+
         return (driver_options_common + driver_transport +
                 driver_options_extension)
 
