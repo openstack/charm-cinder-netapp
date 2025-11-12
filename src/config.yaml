@@ -32,7 +32,7 @@
   "netapp-storage-protocol":
     "type": "string"
     "default": "iscsi"
-    "description": "SAN protocol to use. Choose between iscsi or NFS."
+    "description": "SAN protocol to use. Choose between iscsi, fc or nfs."
   "netapp-vserver":
     "type": "string"
     "default": !!null ""

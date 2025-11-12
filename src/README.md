@@ -16,7 +16,7 @@ The storage family type that is used for the storage system. Can be `ontap_clust
 
 ### `netapp-storage-protocol`
 
-The SAN protocol to use. Can be either `iscsi` or `NFS`.
+The SAN protocol to use. Can be `iscsi`, `fc` or `nfs`.
 
 ### `netapp-vserver`
 
