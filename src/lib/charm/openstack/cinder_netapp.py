@@ -87,6 +87,14 @@ class CinderNetAppCharm(
                 )
             ]
 
+        if cget("netapp-driver-reports-provisioned-capacity"):
+            driver_options_common += [
+                (
+                    "netapp_driver_reports_provisioned_capacity",
+                    str(cget("netapp-driver-reports-provisioned-capacity")),
+                )
+            ]
+
         return (driver_options_common + driver_transport +
                 driver_options_extension)
 

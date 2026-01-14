@@ -12,6 +12,16 @@
       set as "auto". When using auto, Cinder will automatically
       calculate the max_over_subscription_ratio based on the provisioned
       capacity and the used space.
+  "netapp-driver-reports-provisioned-capacity":
+    "type": "boolean"
+    "default": !!bool "false"
+    "description": |
+      Set to True for Cinder to query the storage system in order to calculate
+      volumes provisioned size, otherwise provisioned_capacity_gb will
+      corresponds to the value of allocated_capacity_gb (calculated by Cinder
+      Core code). Enabling this feature increases the number of API calls to the
+      storage and requires more processing on host, which may impact volume
+      report overall performance.
   "netapp-storage-family":
     "type": "string"
     "default": "ontap_cluster"
